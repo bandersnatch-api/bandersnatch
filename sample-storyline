@@ -1,0 +1,23 @@
+1                                 1   1
+2, 3                              2   3
+4, 5, 6, 7                        4   7
+8, 9, 10, 11, 12, 13, 14, 15      8   15
+
+1 - What is an array?
+2 A list of single elements
+3 A list of key-value pairs
+4 - What is a class?
+5 - What is an object?
+6 A kind of object that can create instances that belong to it
+7 An operation that takes an input, modifies it and returns an output
+8 Most things in ruby are objects, apart from functions
+9 Everything in ruby is an object
+10
+11
+12
+13
+14
+15
+
+
+
