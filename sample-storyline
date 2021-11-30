@@ -1,23 +1,24 @@
 1                                 1   1
 2, 3                              2   3
-4, 5, 6, 7                        4   7
-8, 9, 10, 11, 12, 13, 14, 15      8   15
+4, 5                              
+6, 7, 8, 9
+10, 11, 12, 13, 14, 15      8   15
 
 1 - What is an array?
 2 A list of single elements
 3 A list of key-value pairs
 4 - What is a class?
-5 - What is an object?
+5 - What is a class variable
 6 A kind of object that can create instances that belong to it
 7 An operation that takes an input, modifies it and returns an output
-8 Most things in ruby are objects, apart from functions
-9 Everything in ruby is an object
-10
-11
-12
-13
-14
-15
+8 A variable attached to all classes, represented with a $
+9 A variable attached to all instances of a class, represented with a @
+10 - How are strings interpolated?
+11 - How are classes initialised with variables
+12 '#{variable}'
+13 '{#variable}'
+14 def initialize end
+15 def initialise end
 
 
 
