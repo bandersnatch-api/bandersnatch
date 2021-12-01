@@ -1,0 +1,8 @@
+.cardContainer {
+  width: 800px;
+  max-width: 80%;
+  background-color: black;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px 2px;
+}
