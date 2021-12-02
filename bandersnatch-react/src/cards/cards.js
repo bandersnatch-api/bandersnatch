@@ -1,3 +1,4 @@
+
 import './Cards.css';
 
 // const fetch = require("node-fetch");
@@ -13,13 +14,34 @@ import './Cards.css';
 //   }
 // };
 
-fetch('https://bandersnatch-api.herokuapp.com/quizzes')
-.then(response => response.json)
-.then(data => console.log(data))
+const fetchQuestions = async () => {
+  const res = await fetch("https://bandersnatch-api.herokuapp.com/quizzes")
+  const data = await res.json()
+  console.log(data)
 
-// json = getData(url);
+}
 
-// var object = 
+// const url = "https://bandersnatch-api.herokuapp.com/quizzes";
+
+// const fetch =(url, {
+//     method: 'POST',
+//     credentials: 'include',
+//     headers: {
+//       'Content-Type': 'application/json',
+//     },
+//     body: JSON.stringify(data),
+//     })
+//     .then(response => response.json())
+//     .then(data => {
+//       console.log('Success:', data);
+//     })
+//     .catch((error) => {
+//       console.error('Error:', error);
+//     });
+
+// getData(url);
+
+// var object =
 //     {
 //     "id": 1,
 //     "question": "What colour is the sky?",
@@ -40,7 +62,7 @@ function Cards() {
   return (
     <div className="cardContainer">
       <div className="questionDisplay">
-        Question 1 : What should you use to store 1, 2 and 4 ? 
+        Question 1 : What should you use to store 1, 2 and 4 ?
         <br/>
         <button className="anwser1"></button>
         <button className="anwser2"></button>
@@ -51,6 +73,3 @@ function Cards() {
 }
 
 export default Cards
-
-
-

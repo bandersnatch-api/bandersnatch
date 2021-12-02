@@ -10,14 +10,20 @@
 const fetch = require("node-fetch");
 const url = "https://bandersnatch-api.herokuapp.com/quizzes";
 
-const getData = async url => {
-  try {
-    const response = await fetch(url);
-    const json = await response.json();
-    console.log(json);
-  } catch (error) {
-    console.log(error);
-  }
-};
+const getData = fetch(url, {
+    method: 'POST',
+    credentials: 'include',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(data),
+    })
+    .then(response => response.json())
+    .then(data => {
+      console.log('Success:', data);
+    })
+    .catch((error) => {
+      console.error('Error:', error);
+    });
 
 getData(url);
