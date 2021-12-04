@@ -1,71 +1,38 @@
 
 import './Cards.css';
-
-// const fetch = require("node-fetch");
-// const url = "https://bandersnatch-api.herokuapp.com/quizzes";
-
-// const getData = async url => {
-//   try {
-//     const response = await fetch(url);
-//     const json = await response.json();
-//     console.log(json);
-//   } catch (error) {
-//     console.log(error);
-//   }
-// };
-
-const fetchQuestions = async () => {
-  const res = await fetch("https://bandersnatch-api.herokuapp.com/quizzes")
-  const data = await res.json()
-  console.log(data)
-
-}
-
-// const url = "https://bandersnatch-api.herokuapp.com/quizzes";
-
-// const fetch =(url, {
-//     method: 'POST',
-//     credentials: 'include',
-//     headers: {
-//       'Content-Type': 'application/json',
-//     },
-//     body: JSON.stringify(data),
-//     })
-//     .then(response => response.json())
-//     .then(data => {
-//       console.log('Success:', data);
-//     })
-//     .catch((error) => {
-//       console.error('Error:', error);
-//     });
-
-// getData(url);
-
-// var object =
-//     {
-//     "id": 1,
-//     "question": "What colour is the sky?",
-//     "answer1": "Blue",
-//     "answer2": "Red",
-//     "answer3": "Green",
-//     "answer4": "Yellow",
-//     "correct_answer": "Blue",
-//     "created_at": "2021-12-01T17:19:15.391Z",
-//     "updated_at": "2021-12-01T17:19:15.391Z"
-//     }
-
-// const json = JSON.stringify(object)
-
-// const parsed = JSON.parse(json)
+import React, { useState, useEffect } from 'react';
 
 function Cards() {
+  const [questions, setQuestions] = useState(0);
+
+  useEffect(() => {
+    const fetchQuestions = async () => {const res = await fetch("http://bandersnatch-api.herokuapp.com/quizzes")
+    const data = await res.json()
+    console.log("hello")
+    setQuestions(data)
+    console.log(data)
+   }
+  fetchQuestions()
+
+  },[])
+
   return (
     <div className="cardContainer">
       <div className="questionDisplay">
-        Question 1 : What should you use to store 1, 2 and 4 ?
-        <br/>
-        <button className="anwser1"></button>
-        <button className="anwser2"></button>
+      {questions && questions[0].question}
+
+        <button className="anwser1">
+        {questions && questions[0].answer1}
+        </button>
+        <button className="anwser2">
+        {questions && questions[0].answer2}
+        </button>
+        <button className="anwser3">
+        {questions && questions[0].answer3}
+        </button>
+        <button className="anwser4">
+        {questions && questions[0].answer4}
+        </button>
 
       </div>
     </div>
