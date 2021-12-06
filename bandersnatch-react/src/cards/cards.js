@@ -1,5 +1,5 @@
 
-import './Cards.css';
+import './Cards.scss';
 import React, { useState, useEffect } from 'react';
 
 function Cards() {
@@ -8,10 +8,9 @@ function Cards() {
   useEffect(() => {
     const fetchQuestions = async () => {const res = await fetch("http://bandersnatch-api.herokuapp.com/quizzes")
     const data = await res.json()
-    console.log("hello")
     setQuestions(data)
-    console.log(data)
    }
+
   fetchQuestions()
 
   },[])
