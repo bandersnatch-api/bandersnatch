@@ -1,11 +1,11 @@
 import './App.css';
-import Cards from './cards/Cards'
+import Card from './card/Card'
 import React from 'react';
 
 function App() {
   return (
     <div className="App">
-      <Cards />
+      <Card />
     </div>
   );
 }
