@@ -53,7 +53,7 @@ function Card() {
       </div>
     </div>
 ) : (
-  <h1>Hold tight... we're loading!</h1>
+  <h2 className="text-2xl text-white -font-bold">Loading... Hold tight!</h2>
 )
 ;
 }
