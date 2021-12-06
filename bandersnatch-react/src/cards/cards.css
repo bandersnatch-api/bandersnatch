@@ -1,0 +1,23 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cardContainer {
+  width: 800px;
+  max-width: 80%;
+  background-color: rgb(167, 162, 101);
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px 2px;
+  /* margin: 40px; */
+}
+
+.questionDisplay {
+  background: white;
+  width: 646px;
+  margin: 6px;
+  height: 300px;
+  border-radius: 10px;
+}
