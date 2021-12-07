@@ -27,7 +27,43 @@ function Card() {
   //   updateQuestions()
   //   }, [questions])
 
+  function updateScore() {
 
+    var userID = 1
+    var current_score = 0
+    var current_questions_answered = 0
+
+    if (questions[0].answer1 === questions[0].correct_answer) {
+
+      current_score += 1
+      current_questions_answered +=1 
+      
+      const requestOptions = {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json'},
+        body: JSON.stringify({ score: current_score, questions_answered: current_questions_answered })
+
+
+    };
+    fetch(`https://safe-sea-12739.herokuapp.com/https://bandersnatch-api.herokuapp.com/users/${userID}`, requestOptions)
+    } else {
+
+      current_questions_answered +=1 
+      
+      const requestOptions  = {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ questions_answered: `${current_questions_answered + 1}` })
+
+    }
+    fetch(`https://safe-sea-12739.herokuapp.com/https://bandersnatch-api.herokuapp.com/users/${userID}`, requestOptions)
+    }
+  }
+
+  function pressButton() {
+    updateQuestions()
+    updateScore()
+  }
 
 
   return questions.length > 0 ? (
@@ -43,19 +79,19 @@ function Card() {
 
   <div className="grid grid-cols-2 gap-6 mt-6">
 
-    <button onClick={updateQuestions} className="bg-white p-4
+    <button onClick={pressButton} className="bg-white p-4
     text-pink-300 font-semibold rounded shadow">
     {questions[0].answer1}
     </button>
-    <button onClick={updateQuestions} className="bg-white p-4
+    <button onClick={pressButton} className="bg-white p-4
     text-pink-300 font-semibold rounded shadow">
     {questions[0].answer2}
     </button>
-    <button onClick={updateQuestions} className="bg-white p-4
+    <button onClick={pressButton} className="bg-white p-4
     text-pink-300 font-semibold rounded shadow">
     {questions[0].answer3}
     </button>
-    <button onClick={updateQuestions} className="bg-white p-4
+    <button onClick={pressButton} className="bg-white p-4
     text-pink-300 font-semibold rounded shadow">
     {questions[0].answer4}
     </button>
