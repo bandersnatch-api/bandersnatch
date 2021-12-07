@@ -22,23 +22,39 @@ function Finalcard() {
       <div className="cardContainer p-6 mx-auto">
 
           <div className="storyContainer  p-10 mx-auto" > 
-
           </div>
 
       <div className="bg-white text-red-800 p-10
     rounded-lg shadow-md">
         <h1 className="text-2xl text-center font-bold">You've escaped by the skin of your teeth...</h1> <br></br>
         <h2>
-          <div class="row">
-            <div class="col-md-4 col-xs-6">
-              <img src="minotaur_image.jpeg" class="mx-auto d-blockmx-auto d-block img-responsive" />
-              <br></br>
-            </div>
-            </div>
-          {questions[4].story}
+          {questions[4].story, '“Well my thirst isn’t quelled but I’ll let you go. Don’t get swallowed by the staircase it’s awfully hungry you know.” The straw man steps aside. As you steal one last look at the pit of crows the scare crow gives you a sightless look from his hollowed pumpkin eyes as a warning. You run up the stairs, your heart pounding in your chest. As you climb, you notice the walls are getting closer . You turn around to retreat to find a wall where the stairs below once were. You run in blind panic, fighting through the exhaustion and fuelled by terror. Finally you happen upon a room inhabited by a Minotaur. It huffs at you “If you haven’t guessed I’m a Minotaur, guess what question I have in store.”'}
+        </h2>
+        <br></br>
+        <h2  className="text-2-xl font-bold ">
+          {questions[4].question}
         </h2>
       </div>
 
+      <div className="grid grid-cols-2 gap-6 mt-6">
+
+        <button className="bg-white p-4
+        text-red-800 font-semibold rounded shadow">
+        {questions[4].answer1}
+        </button>
+        <button className="bg-white p-4
+        text-red-800 font-semibold rounded shadow">
+        {questions[4].answer2}
+        </button>
+        <button className="bg-white p-4
+        text-red-800 font-semibold rounded shadow">
+        {questions[4].answer3}
+        </button>
+        <button className="bg-white p-4
+        text-red-800 font-semibold rounded shadow">
+        {questions[4].answer4}
+        </button>
+      </div>
       </div>
     </div>
   
