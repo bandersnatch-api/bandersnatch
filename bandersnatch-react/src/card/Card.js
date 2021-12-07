@@ -17,17 +17,19 @@ function Card() {
   },[])
 
   function updateQuestions() {
-    questions.shift()
-    setQuestions(questions)
+    let newArray = questions.slice(1)
+
+    setQuestions(newArray)
+    console.log(newArray[0])
   }
 
-  useEffect((updateQuestions) => {
-    updateQuestions()
-    }, [questions])
+  // useEffect((updateQuestions) => {
+  //   updateQuestions()
+  //   }, [questions])
 
 
 
-  
+
   return questions.length > 0 ? (
     <div className="block mx-auto px-6 	max-width: 768px bg-purple-300">
 
