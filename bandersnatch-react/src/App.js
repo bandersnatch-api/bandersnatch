@@ -1,4 +1,4 @@
-import './App.scss';
+import './App.css';
 import Cards from './cards/Cards';
 import StartPage from './StartPage/StartPage';
 import React from 'react';
