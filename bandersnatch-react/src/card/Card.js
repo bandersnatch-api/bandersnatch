@@ -47,15 +47,15 @@ function Card() {
     text-pink-300 font-semibold rounded shadow">
     {questions[0].answer1}
     </button>
-    <button className="bg-white p-4
+    <button onClick={updateQuestions} className="bg-white p-4
     text-pink-300 font-semibold rounded shadow">
     {questions[0].answer2}
     </button>
-    <button className="bg-white p-4
+    <button onClick={updateQuestions} className="bg-white p-4
     text-pink-300 font-semibold rounded shadow">
     {questions[0].answer3}
     </button>
-    <button className="bg-white p-4
+    <button onClick={updateQuestions} className="bg-white p-4
     text-pink-300 font-semibold rounded shadow">
     {questions[0].answer4}
     </button>
