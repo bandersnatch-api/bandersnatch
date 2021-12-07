@@ -27,6 +27,7 @@ function Finalcard() {
 
       <div className="bg-white text-red-800 p-10
     rounded-lg shadow-md">
+        <h1 className="text-2xl text-center font-bold">You've escaped by the skin of your teeth...</h1> <br></br>
         <h2>
           <div class="row">
             <div class="col-md-4 col-xs-6">
@@ -47,3 +48,5 @@ function Finalcard() {
 ;
 }
  export default Finalcard
+
+//cosmetic change
