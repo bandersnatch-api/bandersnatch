@@ -9,13 +9,18 @@ function Card() {
   useEffect(() => {
     const fetchQuestions = async () => {const res = await fetch("http://bandersnatch-api.herokuapp.com/quizzes")
     const data = await res.json()
-    console.log("hello")
     setQuestions(data)
     console.log(data)
    }
   fetchQuestions()
 
   },[])
+
+
+  function updateQuestions() {
+    questions.shift()
+    setQuestions(questions)
+  }
 
   return questions.length > 0 ? (
 
@@ -33,7 +38,7 @@ function Card() {
 
       <div className="grid grid-cols-2 gap-6 mt-6">
 
-        <button className="bg-white p-4
+        <button onClick={updateQuestions} className="bg-white p-4
         text-pink-300 font-semibold rounded shadow">
         {questions[0].answer1}
         </button>
