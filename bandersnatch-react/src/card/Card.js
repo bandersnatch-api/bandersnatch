@@ -15,7 +15,7 @@ function Card() {
     const fetchQuestions = async () => {const res = await fetch("http://bandersnatch-api.herokuapp.com/quizzes")
     const data = await res.json()
     setQuestions(data)
-    // console.log(data)
+    console.log(data)
    }
   fetchQuestions()
   fetchScore()
@@ -33,9 +33,9 @@ function Card() {
   //   updateQuestions()
   //   }, [questions])
 
-  function updateScore() {
+  function updateScore(answer) {
 
-    if (questions[0].answer1 === questions[0].correct_answer) {
+    if (answer === questions[0].correct_answer) {
 
       current_score += 1
       current_questions_answered +=1 
@@ -69,9 +69,9 @@ function Card() {
 
   }
 
-  function pressButton() {
+  function pressButton(answer) {
     updateQuestions()
-    updateScore()
+    updateScore(answer)
     fetchScore()
   }
 
