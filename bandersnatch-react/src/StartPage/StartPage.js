@@ -23,7 +23,7 @@ export default class StartPage extends Component{
 
   handleSubmit(event){
     const {name} = this.state;
-    axios.post("http://localhost:3000/users", {
+    axios.post("https://bandersnatch-api.herokuapp.com/users", {
       user: {
         questions_answered: 0,
         name: name
