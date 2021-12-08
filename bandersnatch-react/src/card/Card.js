@@ -4,8 +4,8 @@ import React, { useState, useEffect } from 'react';
 
 
 var userID = 1
-var current_score = null
-var current_questions_answered = null
+var current_score = 0
+var current_questions_answered = 0
 
 
 function Card() {
@@ -26,12 +26,7 @@ function Card() {
     let newArray = questions.slice(1)
 
     setQuestions(newArray)
-    // console.log(newArray[0])
   }
-
-  // useEffect((updateQuestions) => {
-  //   updateQuestions()
-  //   }, [questions])
 
   function updateScore(answer) {
 
@@ -43,19 +38,19 @@ function Card() {
       const requestOptions = {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json'},
-        body: JSON.stringify({ score: current_score, questions_answered: current_questions_answered })
+        body: JSON.stringify({ score: `${current_score}`, questions_answered: `${current_questions_answered}` })
 
 
     };
     fetch(`https://safe-sea-12739.herokuapp.com/https://bandersnatch-api.herokuapp.com/users/${userID}`, requestOptions)
-    } else {
+    } else if (answer !== questions[0].correct_answer) {
 
       current_questions_answered +=1 
       
       const requestOptions  = {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ questions_answered: `${current_questions_answered + 1}` })
+        body: JSON.stringify({ score: `${current_score}`, questions_answered: `${current_questions_answered}` })
 
     }
     fetch(`https://safe-sea-12739.herokuapp.com/https://bandersnatch-api.herokuapp.com/users/${userID}`, requestOptions)
@@ -72,7 +67,7 @@ function Card() {
   function pressButton(answer) {
     updateQuestions()
     updateScore(answer)
-    fetchScore()
+    // fetchScore()
   }
 
 
@@ -89,19 +84,19 @@ function Card() {
 
   <div className="grid grid-cols-2 gap-6 mt-6">
 
-    <button onClick={pressButton} className="bg-white p-4
+    <button onClick={() => pressButton(questions[0].answer1)} className="bg-white p-4
     text-pink-300 font-semibold rounded shadow">
     {questions[0].answer1}
     </button>
-    <button onClick={pressButton} className="bg-white p-4
+    <button onClick={() => pressButton(questions[0].answer2)} className="bg-white p-4
     text-pink-300 font-semibold rounded shadow">
     {questions[0].answer2}
     </button>
-    <button onClick={pressButton} className="bg-white p-4
+    <button onClick={() => pressButton(questions[0].answer3)} className="bg-white p-4
     text-pink-300 font-semibold rounded shadow">
     {questions[0].answer3}
     </button>
-    <button onClick={pressButton} className="bg-white p-4
+    <button onClick={() => pressButton(questions[0].answer4)} className="bg-white p-4
     text-pink-300 font-semibold rounded shadow">
     {questions[0].answer4}
     </button>
