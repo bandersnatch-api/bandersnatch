@@ -1,8 +1,9 @@
 import './Card.css'
 import React, { useState, useEffect } from 'react';
+import userID from '../App.js'
 
 
-var userID = 1
+// var userID = 1
 var current_score = 0
 var current_questions_answered = 0
 
@@ -11,13 +12,15 @@ function Card() {
   const [questions, setQuestions] = useState(0);
 
   useEffect(() => {
-    const fetchQuestions = async () => {const res = await fetch("https://safe-sea-12739.herokuapp.com/https://bandersnatch-api.herokuapp.com/quizzes")
+    const fetchQuestions = async () => {const res = await fetch("http://localhost:3000/quizzes")
     const data = await res.json()
     setQuestions(data)
     console.log(data)
    }
   fetchQuestions()
   fetchScore()
+  console.log('userID is below')
+  console.log(userID)
 
   },[])
 
@@ -41,7 +44,7 @@ function Card() {
 
 
     };
-    fetch(`https://safe-sea-12739.herokuapp.com/https://bandersnatch-api.herokuapp.com/users/${userID}`, requestOptions)
+    fetch(`http://localhost:3000/users/${userID}`, requestOptions)
     } else if (answer !== questions[0].correct_answer) {
 
       current_questions_answered +=1 
@@ -52,11 +55,11 @@ function Card() {
         body: JSON.stringify({ score: `${current_score}`, questions_answered: `${current_questions_answered}` })
 
     }
-    fetch(`https://safe-sea-12739.herokuapp.com/https://bandersnatch-api.herokuapp.com/users/${userID}`, requestOptions)
+    fetch(`http://localhost:3000/users/${userID}`, requestOptions)
     }
   }
 
-  const fetchScore = async () => {const res = await fetch("https://safe-sea-12739.herokuapp.com/http://bandersnatch-api.herokuapp.com/users/1")
+  const fetchScore = async () => {const res = await fetch("http://localhost:3000/users/1")
   const data = await res.json()
   current_score = data.score
   current_questions_answered = data.questions_answered

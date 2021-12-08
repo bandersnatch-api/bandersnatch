@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 
 export default class StartPage extends Component{
+
   constructor(props){
     super(props);
 
@@ -23,19 +24,25 @@ export default class StartPage extends Component{
 
   handleSubmit(event){
     const {name} = this.state;
-    axios.post("https://safe-sea-12739.herokuapp.com/https://bandersnatch-api.herokuapp.com/users", {
+    axios.post("http://localhost:3000/users", {
       user: {
+        score: 0,
         questions_answered: 0,
         name: name
       }
     }, 
     { withCredentials: true }
-    ).then(response => {
-      console.log("ieuhieuh", response);
+    ).then((response) => {
+      
+      var userID = response.data.id;
+      console.log(userID)
+      return userID
     })
     event.preventDefault();
 
   };
+
+  userID
 
   render(){
     return(
