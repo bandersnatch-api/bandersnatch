@@ -11,7 +11,7 @@ function Card() {
   const [questions, setQuestions] = useState(0);
 
   useEffect(() => {
-    const fetchQuestions = async () => {const res = await fetch("http://bandersnatch-api.herokuapp.com/quizzes")
+    const fetchQuestions = async () => {const res = await fetch("https://safe-sea-12739.herokuapp.com/https://bandersnatch-api.herokuapp.com/quizzes")
     const data = await res.json()
     setQuestions(data)
     console.log(data)
@@ -56,7 +56,7 @@ function Card() {
     }
   }
 
-  const fetchScore = async () => {const res = await fetch("http://bandersnatch-api.herokuapp.com/users/1")
+  const fetchScore = async () => {const res = await fetch("https://safe-sea-12739.herokuapp.com/http://bandersnatch-api.herokuapp.com/users/1")
   const data = await res.json()
   current_score = data.score
   current_questions_answered = data.questions_answered
