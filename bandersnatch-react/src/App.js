@@ -1,5 +1,5 @@
 import './App.css';
-import Cards from './cards/Cards';
+import Card from './card/Card';
 import StartPage from './StartPage/StartPage';
 import React from 'react';
 import { BrowserRouter as Router,
@@ -13,7 +13,7 @@ function App() {
     <div className="App">
       <Routes>
         <Route path="/" element={<StartPage/>} />
-        <Route path="/play" element={<Cards/>} />
+        <Route path="/play" element={<Card/>} />
       </Routes>
     </div>
     </Router>
