@@ -72,17 +72,17 @@ function Card() {
 
 
   return questions.length > 0 ? (
-    <div className="block mx-auto px-6 	max-width: 768px bg-purple-300">
+    <div className="block mx-auto px-6 	max-width: 768px bg-red-800">
 
 <div className="cardContainer p-6 mx-auto">
 
-  <div className="bg-white text-pink-300 p-10 rounded-lg shadow-md">
+  <div className="bg-white text-red-800 p-10 rounded-lg shadow-md">
     <h2>{questions[0].story}</h2>
   </div>
   <br>
   </br>
 
-  <div className="bg-white text-pink-300 p-10 rounded-lg shadow-md">
+  <div className="bg-white text-red-800 p-10 rounded-lg shadow-md">
     <h2 className="text-2-xl font-bold ">
       {questions[0].question}
     </h2>
@@ -91,26 +91,26 @@ function Card() {
   <div className="grid grid-cols-2 gap-6 mt-6">
 
     <button onClick={() => pressButton(questions[0].answer1)} className="bg-white p-4
-    text-pink-300 font-semibold rounded shadow">
+    text-red-800 font-semibold rounded shadow">
     {questions[0].answer1}
     </button>
     <button onClick={() => pressButton(questions[0].answer2)} className="bg-white p-4
-    text-pink-300 font-semibold rounded shadow">
+    text-red-800 font-semibold rounded shadow">
     {questions[0].answer2}
     </button>
     <button onClick={() => pressButton(questions[0].answer3)} className="bg-white p-4
-    text-pink-300 font-semibold rounded shadow">
+    text-red-800 font-semibold rounded shadow">
     {questions[0].answer3}
     </button>
     <button onClick={() => pressButton(questions[0].answer4)} className="bg-white p-4
-    text-pink-300 font-semibold rounded shadow">
+    text-red-800 font-semibold rounded shadow">
     {questions[0].answer4}
     </button>
   </div>
 </div>
 </div>
   ) : (
-    <h2 className="text-2xl text-white -font-bold">Loading... Hold tight!</h2>
+    <h2 className="text-2xl text-white -font-bold">We've been expecting you...</h2>
   )
   }
 

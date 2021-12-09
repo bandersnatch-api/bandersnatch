@@ -3,10 +3,11 @@
   justify-content: center;
   align-items: center;
 }
-/*  */
+
 .cardContainer {
   width: 800px;
   max-width: 80%;
+  background-color: #832;
 
   border-radius: 5px;
   box-shadow: 0 0 10px 2px;
