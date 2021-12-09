@@ -13,8 +13,9 @@ function Card() {
   useEffect(() => {
     const fetchQuestions = async () => {const res = await fetch("https://safe-sea-12739.herokuapp.com/https://bandersnatch-api.herokuapp.com/quizzes")
     const data = await res.json()
-    setQuestions(data)
-    console.log(data)
+    const shorterData = data.slice(0, 4)
+    setQuestions(shorterData)
+    console.log(shorterData)
    }
   fetchQuestions()
   fetchScore()
