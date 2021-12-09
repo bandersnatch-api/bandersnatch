@@ -1,7 +1,6 @@
 import './Card.css'
 import React, { useState, useEffect } from 'react';
 
-
 var userID = 1
 var current_score = 0
 var current_questions_answered = 0
