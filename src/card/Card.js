@@ -1,6 +1,6 @@
 import './Card.css'
 import React, { useState, useEffect } from 'react';
-import userID from '../App.js'
+import userID from '../StartPage/StartPage.js'
 
 
 // var userID = 1

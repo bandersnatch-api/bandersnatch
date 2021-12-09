@@ -4,6 +4,8 @@ import axios from 'axios';
 
 export default class StartPage extends Component{
 
+
+
   constructor(props){
     super(props);
 
@@ -41,8 +43,6 @@ export default class StartPage extends Component{
     event.preventDefault();
 
   };
-
-  userID
 
   render(){
     return(
