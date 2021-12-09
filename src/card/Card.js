@@ -76,6 +76,12 @@ function Card() {
 <div className="cardContainer p-6 mx-auto">
 
   <div className="bg-white text-pink-300 p-10 rounded-lg shadow-md">
+    <h2>{questions[0].story}</h2>
+  </div>
+  <br>
+  </br>
+
+  <div className="bg-white text-pink-300 p-10 rounded-lg shadow-md">
     <h2 className="text-2-xl font-bold ">
       {questions[0].question}
     </h2>

@@ -37,6 +37,7 @@ export default class StartPage extends Component{
 
   };
 
+
   render(){
     return(
       <div>

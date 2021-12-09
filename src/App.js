@@ -16,7 +16,6 @@ function App() {
         <Route path="/" element={<StartPage/>} />
         <Route path="/play" element={<Card/>} />
         <Route path="/finalcard" element={<Finalcard/>} />
-        
       </Routes>
     </div>
     </Router>
