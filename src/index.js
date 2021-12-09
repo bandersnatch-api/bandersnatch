@@ -5,7 +5,6 @@ import { Routes, Route, BrowserRouter as Router } from 'react-router-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import Finalcard from './pages/finalcard/Finalcard';
 
 const rootElement =  document.getElementById('root');
 render(
@@ -13,7 +12,6 @@ render(
     <Router> 
       <Routes>
         <Route path='/' element= {<App /> } />
-        <Route path='final-page' element= {<Finalcard /> } />
       </Routes>
     </Router>
   </React.StrictMode>,
